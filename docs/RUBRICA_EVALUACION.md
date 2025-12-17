@@ -1,220 +1,188 @@
-# 📊 Rúbrica de Evaluación: Práctica CRUD Laravel + React
+# 📊 Rúbrica de Evaluación: CRUD de Categorías
 
 ## Información General
 
 | Campo | Valor |
 |-------|-------|
-| **Puntuación máxima** | 10 puntos (+1.5 bonus) |
+| **Puntuación máxima** | 10 puntos |
 | **Puntuación mínima para aprobar** | 5 puntos |
 | **Modalidad** | Individual o parejas |
 
 ---
 
-## Fase 1: Configuración y Análisis (10% - 1 punto)
+## Tarea 1: CRUD de Categorías (5 puntos)
 
-### 1.1 Fork y Configuración del Entorno (0.4 puntos)
+### 1.1 Backend (2.5 puntos)
 
-| Nivel | Puntos | Descripción |
-|-------|--------|-------------|
-| **Excelente** | 0.4 | Proyecto funciona sin errores. Todas las dependencias instaladas. Base de datos configurada y migraciones ejecutadas. |
-| **Bien** | 0.3 | Proyecto funciona con mínimas intervenciones. Faltan algunos detalles de configuración. |
-| **Suficiente** | 0.2 | Proyecto funciona pero requiere ajustes manuales para arrancar. |
-| **Insuficiente** | 0-0.1 | El proyecto no arranca o tiene errores graves de configuración. |
-
-### 1.2 Análisis del Código Base (0.6 puntos)
+#### Migración (0.5 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| **Excelente** | 0.6 | Documento `ANALISIS.md` completo con: estructura de carpetas detallada, flujo de datos Inertia explicado, diagrama de componentes, análisis de rutas y controladores. |
-| **Bien** | 0.45 | Análisis completo pero con algunas secciones poco desarrolladas. |
-| **Suficiente** | 0.3 | Análisis básico que cubre los puntos principales sin profundidad. |
-| **Insuficiente** | 0-0.15 | Análisis incompleto o ausente. |
+| **Excelente** | 0.5 | Todos los campos especificados, tipos correctos, restricciones (`unique`, `default`) aplicadas. |
+| **Bien** | 0.4 | Campos correctos, falta alguna restricción menor. |
+| **Suficiente** | 0.25 | Tabla creada pero faltan campos o tipos incorrectos. |
+| **Insuficiente** | 0 | Migración ausente o no ejecutable. |
+
+#### Modelo (0.5 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | `$fillable` completo, `$casts` para boolean, relación `hasMany` definida. |
+| **Bien** | 0.4 | `$fillable` correcto, falta `$casts` o relación. |
+| **Suficiente** | 0.25 | Modelo básico sin configuración de atributos. |
+| **Insuficiente** | 0 | Modelo ausente o con errores graves. |
+
+#### Controlador (1 punto)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 1.0 | 4 métodos (index, store, update, destroy) completos. Validación correcta. Respuestas Inertia/JSON apropiadas. |
+| **Bien** | 0.75 | Métodos implementados, validación básica, algún detalle menor. |
+| **Suficiente** | 0.5 | Faltan métodos o validación incompleta. |
+| **Insuficiente** | 0-0.25 | Controlador ausente o no funcional. |
+
+#### Rutas (0.5 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | 4 rutas RESTful, middleware `auth` y `verified`, nombres asignados. |
+| **Bien** | 0.4 | Rutas funcionales, falta middleware o nombres. |
+| **Suficiente** | 0.25 | Rutas básicas sin protección. |
+| **Insuficiente** | 0 | Rutas ausentes o erróneas. |
 
 ---
 
-## Fase 2: Nuevas Entidades (30% - 3 puntos)
+### 1.2 Frontend (2.5 puntos)
 
-### 2.1 CRUD de Categorías (1.5 puntos)
-
-#### Backend (0.75 puntos)
-
-| Componente | Puntos | Criterios |
-|------------|--------|-----------|
-| **Migración** | 0.15 | Tabla creada correctamente con todos los campos especificados, tipos correctos, restricciones aplicadas. |
-| **Modelo** | 0.15 | `$fillable` configurado, `$casts` para boolean, relaciones definidas. |
-| **Controlador** | 0.30 | Métodos index, store, update, destroy implementados. Validación de datos. Respuestas correctas (Inertia/JSON). |
-| **Rutas** | 0.15 | Rutas RESTful definidas, middleware de autenticación aplicado, nombres de ruta asignados. |
-
-#### Frontend (0.75 puntos)
-
-| Componente | Puntos | Criterios |
-|------------|--------|-----------|
-| **Tipos TypeScript** | 0.15 | Interface `Category` definida correctamente, props tipadas. |
-| **Página Index** | 0.25 | Listado de categorías, integración con layout, manejo de estado. |
-| **Componentes** | 0.25 | Tabla y modal reutilizables, formulario funcional, validación visual. |
-| **Navegación** | 0.10 | Enlace añadido en menú, navegación funcional. |
-
-### 2.2 Relación Producto-Categoría (1.5 puntos)
-
-| Componente | Puntos | Criterios |
-|------------|--------|-----------|
-| **Migración** | 0.25 | Foreign key `category_id` añadida a products, constraint configurada. |
-| **Relaciones Eloquent** | 0.35 | `belongsTo` en Product, `hasMany` en Category, eager loading implementado. |
-| **Formulario actualizado** | 0.40 | Selector de categoría en crear/editar producto, categorías cargadas desde backend. |
-| **Visualización** | 0.30 | Categoría mostrada en tabla de productos, badge o texto con nombre/color. |
-| **Tipos TypeScript** | 0.20 | Interface Product actualizada con category opcional. |
-
----
-
-## Fase 3: Funcionalidades Avanzadas (30% - 3 puntos)
-
-*El alumno debe implementar mínimo 3 funcionalidades de las siguientes (1 punto cada una):*
-
-### 3.1 Paginación (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Backend** | 0.30 | Uso de `paginate()`, número configurable de items. |
-| **Frontend** | 0.40 | Componente de paginación, navegación funcional, estado sincronizado. |
-| **UX** | 0.15 | Indicador de página actual, total de páginas/items. |
-| **URL** | 0.15 | Parámetro `page` en URL, navegación con botones actualiza URL. |
-
-### 3.2 Búsqueda y Filtros (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Búsqueda** | 0.30 | Campo de búsqueda funcional, búsqueda en múltiples campos. |
-| **Filtros** | 0.35 | Mínimo 2 filtros implementados (categoría, estado, precio). |
-| **Combinación** | 0.20 | Filtros combinables entre sí y con búsqueda. |
-| **UX** | 0.15 | Botón limpiar filtros, feedback visual de filtros activos. |
-
-### 3.3 Ordenación por Columnas (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Funcionalidad** | 0.40 | Click en cabecera ordena, toggle ASC/DESC. |
-| **Visual** | 0.25 | Indicador de dirección (flechas), columna activa destacada. |
-| **Backend** | 0.20 | Query ordenada según parámetros. |
-| **URL** | 0.15 | Parámetros `sort` y `direction` en URL. |
-
-### 3.4 Exportación de Datos (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **CSV** | 0.50 | Exportación funcional, todos los campos incluidos, encoding correcto. |
-| **Filtros** | 0.25 | Exporta datos filtrados, no todos. |
-| **Nombre archivo** | 0.10 | Incluye fecha en nombre. |
-| **PDF** (bonus) | 0.15 | Exportación PDF con formato legible. |
-
-### 3.5 Imágenes de Producto (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Upload** | 0.35 | Formulario acepta imágenes, validación de tipo/tamaño. |
-| **Almacenamiento** | 0.25 | Imagen guardada en storage, path en BD. |
-| **Visualización** | 0.25 | Thumbnail en tabla, imagen completa en detalle/modal. |
-| **Preview** | 0.15 | Previsualización antes de subir. |
-
-### 3.6 Soft Deletes (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Implementación** | 0.30 | Trait `SoftDeletes` aplicado, migración con `deleted_at`. |
-| **Vista papelera** | 0.35 | Listado de productos eliminados, acceso desde menú. |
-| **Restaurar** | 0.20 | Botón restaurar funcional. |
-| **Eliminar permanente** | 0.15 | Botón eliminar definitivo con confirmación. |
-
-### 3.7 Historial de Cambios (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Tabla logs** | 0.25 | Migración con campos correctos. |
-| **Registro automático** | 0.35 | Eventos CREATE/UPDATE/DELETE capturados. |
-| **Vista historial** | 0.25 | Listado de cambios por producto. |
-| **Detalle** | 0.15 | Muestra valores anteriores/nuevos, usuario, fecha. |
-
-### 3.8 Dashboard con Estadísticas (1 punto)
-
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Métricas básicas** | 0.30 | Total productos, por categoría, por estado. |
-| **Gráficos** | 0.30 | Mínimo 1 gráfico (Chart.js, Recharts, etc.). |
-| **Inventario** | 0.20 | Valor total, productos bajo stock. |
-| **Últimos productos** | 0.20 | Listado de últimas adiciones. |
-
----
-
-## Fase 4: Calidad de Código (15% - 1.5 puntos)
-
-### 4.1 TypeScript (0.5 puntos)
+#### Tipos TypeScript (0.5 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| **Excelente** | 0.5 | Sin errores TS, interfaces completas, sin `any`, props tipadas. |
-| **Bien** | 0.4 | Pocos errores menores, la mayoría de código tipado. |
-| **Suficiente** | 0.25 | Tipado básico, algunos `any` o errores tolerados. |
-| **Insuficiente** | 0-0.15 | Muchos errores TS, uso extensivo de `any`. |
+| **Excelente** | 0.5 | Interface `Category` completa con todos los campos tipados. Props de página tipadas. |
+| **Bien** | 0.4 | Interface correcta, algún campo faltante. |
+| **Suficiente** | 0.25 | Tipado básico o uso de `any`. |
+| **Insuficiente** | 0 | Sin tipado TypeScript. |
 
-### 4.2 Validación (0.5 puntos)
-
-| Nivel | Puntos | Descripción |
-|-------|--------|-------------|
-| **Excelente** | 0.5 | Validación completa backend y frontend, mensajes en español, feedback visual claro. |
-| **Bien** | 0.4 | Validación backend completa, frontend básico. |
-| **Suficiente** | 0.25 | Solo validación backend o solo frontend. |
-| **Insuficiente** | 0-0.15 | Validación ausente o muy incompleta. |
-
-### 4.3 Código Limpio (0.5 puntos)
+#### Página Index (0.75 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| **Excelente** | 0.5 | Código legible, bien estructurado, sin duplicación, comentarios útiles, componentes reutilizables. |
-| **Bien** | 0.4 | Código organizado con pequeñas mejoras posibles. |
-| **Suficiente** | 0.25 | Código funcional pero con problemas de organización o duplicación. |
-| **Insuficiente** | 0-0.15 | Código desordenado, difícil de leer o mantener. |
+| **Excelente** | 0.75 | Página completa con tabla, botón crear, modales, manejo de estado con hooks. |
+| **Bien** | 0.5 | Página funcional con pequeños detalles a mejorar. |
+| **Suficiente** | 0.35 | Listado básico sin modales o estado incompleto. |
+| **Insuficiente** | 0-0.2 | Página ausente o no funcional. |
+
+#### Componentes Tabla y Modal (0.75 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.75 | Componentes separados, reutilizables, props tipadas, formulario con validación visual. |
+| **Bien** | 0.5 | Componentes funcionales, algún detalle de organización. |
+| **Suficiente** | 0.35 | Todo en un archivo o sin separación de responsabilidades. |
+| **Insuficiente** | 0-0.2 | Componentes ausentes o con errores graves. |
+
+#### Navegación (0.5 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | Enlace "Categorías" en menú desktop y responsive, activo resaltado. |
+| **Bien** | 0.4 | Enlace presente, falta en menú responsive. |
+| **Suficiente** | 0.25 | Enlace básico sin estilos activos. |
+| **Insuficiente** | 0 | Sin enlace de navegación. |
 
 ---
 
-## Fase 5: Documentación y Entrega (15% - 1.5 puntos)
+## Tarea 2: Relación Producto-Categoría (3 puntos)
 
-### 5.1 Documentación (0.75 puntos)
+### 2.1 Backend (1.5 puntos)
 
-| Documento | Puntos | Criterios |
-|-----------|--------|-----------|
-| **README.md** | 0.25 | Instrucciones claras de instalación, descripción del proyecto, screenshots. |
-| **DESARROLLO.md** | 0.25 | Descripción de funcionalidades implementadas, decisiones tomadas. |
-| **Comentarios código** | 0.25 | Funciones complejas documentadas, JSDoc/PHPDoc donde corresponda. |
-
-### 5.2 Control de Versiones (0.5 puntos)
+#### Migración Foreign Key (0.5 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| **Excelente** | 0.5 | +15 commits descriptivos, conventional commits, historial limpio. |
-| **Bien** | 0.4 | 10-15 commits, mensajes claros. |
-| **Suficiente** | 0.25 | 5-10 commits, algunos mensajes poco descriptivos. |
-| **Insuficiente** | 0-0.15 | <5 commits o mensajes tipo "update", "fix". |
+| **Excelente** | 0.5 | `category_id` con `foreignId`, `constrained()`, `nullOnDelete()` o `cascadeOnDelete()`. |
+| **Bien** | 0.4 | Foreign key correcta, falta constraint de eliminación. |
+| **Suficiente** | 0.25 | Columna añadida sin foreign key constraint. |
+| **Insuficiente** | 0 | Migración ausente o errónea. |
 
-### 5.3 Entrega (0.25 puntos)
+#### Relaciones Eloquent (0.5 puntos)
 
-| Aspecto | Puntos | Criterios |
-|---------|--------|-----------|
-| **Repositorio** | 0.15 | URL correcta, código accesible, .gitignore correcto. |
-| **Puntualidad** | 0.10 | Entregado antes de la fecha límite. |
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | `belongsTo` en Product, `hasMany` en Category, tipos de retorno especificados. |
+| **Bien** | 0.4 | Relaciones definidas, falta tipo de retorno. |
+| **Suficiente** | 0.25 | Solo una relación definida. |
+| **Insuficiente** | 0 | Sin relaciones. |
+
+#### Controlador Actualizado (0.5 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | `with('category')` en query, categorías pasadas a vista, validación de `category_id`. |
+| **Bien** | 0.4 | Eager loading correcto, falta validación. |
+| **Suficiente** | 0.25 | Categorías pasadas sin eager loading. |
+| **Insuficiente** | 0 | Sin modificaciones al controlador. |
 
 ---
 
-## Bonus (hasta +1.5 puntos)
+### 2.2 Frontend (1.5 puntos)
 
-| Bonus | Puntos | Criterios |
-|-------|--------|-----------|
-| **Despliegue** | +1.0 | Aplicación desplegada y funcional (Railway, Render, VPS, etc.) |
-| **Vídeo demo** | +0.5 | Vídeo de 3-5 min explicando funcionalidades implementadas |
-| **+4 funcionalidades** | +0.5 | Implementar más de 3 funcionalidades de la Fase 3 |
-| **Tests** | +0.5 | Tests unitarios o de integración (Pest/PHPUnit, Jest) |
-| **CI/CD** | +0.25 | GitHub Actions para tests o despliegue automático |
-| **Bug fix reportado** | +0.25 | Issue abierta en repo original con bug encontrado y solución |
+#### Tipos TypeScript Actualizados (0.5 puntos)
 
-*Nota: El bonus no puede superar +1.5 puntos adicionales.*
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | `Product` incluye `category_id?: number` y `category?: Category`. |
+| **Bien** | 0.4 | Tipos actualizados, falta opcional o relación. |
+| **Suficiente** | 0.25 | Tipos básicos sin relación. |
+| **Insuficiente** | 0 | Sin actualización de tipos. |
+
+#### Selector de Categoría en Modal (0.5 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | `<select>` con categorías activas, opción vacía, valor enlazado al estado. |
+| **Bien** | 0.4 | Selector funcional, pequeños detalles UX. |
+| **Suficiente** | 0.25 | Selector básico sin filtrar activas. |
+| **Insuficiente** | 0 | Sin selector de categoría. |
+
+#### Categoría en Tabla de Productos (0.5 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.5 | Columna "Categoría" con nombre, badge con color si aplica, manejo de null. |
+| **Bien** | 0.4 | Nombre mostrado, falta manejo de null o estilos. |
+| **Suficiente** | 0.25 | Nombre mostrado sin estilos. |
+| **Insuficiente** | 0 | Sin columna de categoría. |
+
+---
+
+## Tarea 3: Documentación y Entrega (2 puntos)
+
+### 3.1 Control de Versiones (1 punto)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 1.0 | +7 commits descriptivos, formato `feat:`, `fix:`, `docs:`, historial limpio. |
+| **Bien** | 0.75 | 5-7 commits, mensajes claros. |
+| **Suficiente** | 0.5 | 3-5 commits, mensajes básicos. |
+| **Insuficiente** | 0-0.25 | <3 commits o mensajes tipo "update", "asdf". |
+
+### 3.2 README y Documentación (0.75 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.75 | README actualizado con nombre, descripción de funcionalidades, capturas de pantalla. |
+| **Bien** | 0.5 | README con descripción, faltan capturas. |
+| **Suficiente** | 0.35 | README básico solo con nombre. |
+| **Insuficiente** | 0-0.2 | README sin modificar. |
+
+### 3.3 Entrega (0.25 puntos)
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.25 | Repositorio accesible, .gitignore correcto, entrega puntual. |
+| **Suficiente** | 0.15 | Repositorio accesible con pequeños problemas. |
+| **Insuficiente** | 0 | Repositorio inaccesible o entrega tardía >2 días. |
 
 ---
 
@@ -223,10 +191,9 @@
 | Penalización | Puntos | Motivo |
 |--------------|--------|--------|
 | **Plagio** | -10 | Código copiado de compañero sin atribución |
-| **Sin funcionamiento** | -2 | La aplicación no arranca |
+| **No funciona** | -2 | La aplicación no arranca |
 | **Entrega tardía** | -0.5/día | Por cada día de retraso (máx -2) |
-| **Sin .gitignore** | -0.25 | Subir node_modules, vendor, .env |
-| **Archivos sensibles** | -0.5 | Subir credenciales, API keys, etc. |
+| **Archivos innecesarios** | -0.25 | Subir node_modules, vendor, .env |
 
 ---
 
@@ -234,9 +201,9 @@
 
 | Nota | Rango | Descripción |
 |------|-------|-------------|
-| **Sobresaliente** | 9-10+ | Todas las fases completas, código excelente, bonus |
-| **Notable** | 7-8.9 | Fases obligatorias completas, buen código |
-| **Bien** | 6-6.9 | Fases obligatorias con algunos fallos menores |
+| **Sobresaliente** | 9-10 | Todo completo y bien implementado |
+| **Notable** | 7-8.9 | Funcionalidades completas con detalles menores |
+| **Bien** | 6-6.9 | CRUD funcional con algunos fallos |
 | **Suficiente** | 5-5.9 | Requisitos mínimos cumplidos |
 | **Insuficiente** | <5 | No cumple requisitos mínimos |
 
@@ -246,60 +213,62 @@
 
 Antes de entregar, verifica:
 
-### Fase 1
-- [ ] El proyecto arranca sin errores
-- [ ] Documento `ANALISIS.md` completo
+### Tarea 1: CRUD Categorías
+- [ ] Migración ejecuta sin errores (`php artisan migrate`)
+- [ ] Modelo tiene `$fillable` y `$casts`
+- [ ] Controlador tiene los 4 métodos CRUD
+- [ ] Rutas protegidas con `auth` middleware
+- [ ] Interface TypeScript `Category` definida
+- [ ] Página `/categories` muestra tabla
+- [ ] Modal crear/editar funciona
+- [ ] Enlace en navegación
 
-### Fase 2
-- [ ] CRUD de Categorías funcional
-- [ ] Relación Producto-Categoría implementada
+### Tarea 2: Relación
+- [ ] Columna `category_id` en tabla `products`
+- [ ] Relación `belongsTo` en Product
+- [ ] Relación `hasMany` en Category
 - [ ] Selector de categoría en formulario de producto
+- [ ] Categoría visible en tabla de productos
 
-### Fase 3
-- [ ] Mínimo 3 funcionalidades avanzadas implementadas
-- [ ] Cada funcionalidad probada y funcional
-
-### Fase 4
-- [ ] `npm run types` sin errores
-- [ ] Validación en backend y frontend
-- [ ] Código limpio y organizado
-
-### Fase 5
-- [ ] README.md actualizado
-- [ ] Mínimo 10 commits significativos
-- [ ] Repositorio GitHub accesible
-
-### Bonus (opcional)
-- [ ] Aplicación desplegada
-- [ ] Vídeo demo grabado
-- [ ] Tests implementados
+### Tarea 3: Entrega
+- [ ] Mínimo 5 commits
+- [ ] README actualizado con mi nombre
+- [ ] Capturas de pantalla incluidas
+- [ ] Repositorio público y accesible
 
 ---
 
-## Ejemplo de Evaluación
+## Plantilla de Evaluación
 
-### Alumno: Juan Pérez
-### Fecha: DD/MM/YYYY
+### Alumno: _______________
+### Fecha: _______________
 
-| Fase | Puntos Obtenidos | Puntos Máximos | Comentarios |
-|------|------------------|----------------|-------------|
-| 1.1 Fork y Config | 0.4 | 0.4 | Correcto |
-| 1.2 Análisis | 0.5 | 0.6 | Falta diagrama de componentes |
-| 2.1 CRUD Categorías | 1.3 | 1.5 | Modal con pequeño bug visual |
-| 2.2 Relación | 1.5 | 1.5 | Correcto |
-| 3.1 Paginación | 0.9 | 1.0 | Falta total de items |
-| 3.2 Búsqueda | 1.0 | 1.0 | Excelente |
-| 3.3 Ordenación | 0.8 | 1.0 | No persiste en URL |
-| 4.1 TypeScript | 0.4 | 0.5 | 2 errores menores |
-| 4.2 Validación | 0.5 | 0.5 | Completa |
-| 4.3 Código limpio | 0.4 | 0.5 | Algo de duplicación |
-| 5.1 Documentación | 0.6 | 0.75 | README incompleto |
-| 5.2 Git | 0.5 | 0.5 | 18 commits |
-| 5.3 Entrega | 0.25 | 0.25 | Puntual |
-| **SUBTOTAL** | **9.05** | **10** | |
-| Bonus: Despliegue | +0.5 | +1.0 | Desplegado en Railway |
-| **TOTAL** | **9.55** | **11.5** | **Sobresaliente** |
+| Criterio | Puntos | Máx | Comentarios |
+|----------|--------|-----|-------------|
+| **T1: Backend** | | 2.5 | |
+| - Migración | | 0.5 | |
+| - Modelo | | 0.5 | |
+| - Controlador | | 1.0 | |
+| - Rutas | | 0.5 | |
+| **T1: Frontend** | | 2.5 | |
+| - Tipos TS | | 0.5 | |
+| - Página Index | | 0.75 | |
+| - Componentes | | 0.75 | |
+| - Navegación | | 0.5 | |
+| **T2: Backend** | | 1.5 | |
+| - Migración FK | | 0.5 | |
+| - Relaciones | | 0.5 | |
+| - Controlador | | 0.5 | |
+| **T2: Frontend** | | 1.5 | |
+| - Tipos TS | | 0.5 | |
+| - Selector | | 0.5 | |
+| - Tabla | | 0.5 | |
+| **T3: Documentación** | | 2.0 | |
+| - Commits | | 1.0 | |
+| - README | | 0.75 | |
+| - Entrega | | 0.25 | |
+| **TOTAL** | | **10** | |
 
 ---
 
-*Rúbrica v1.0 - Diciembre 2024*
+*Rúbrica v2.0 - Diciembre 2024*
