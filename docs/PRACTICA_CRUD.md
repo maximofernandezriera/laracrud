@@ -1,17 +1,5 @@
 # 📝 Práctica: CRUD de Categorías con Laravel + React + Inertia.js
 
-## Información General
-
-| Campo | Valor |
-|-------|-------|
-| **Módulo** | Desarrollo Web en Entorno Servidor / Cliente |
-| **Ciclo** | DAW / DAM |
-| **Duración** | 1 semana |
-| **Modalidad** | Individual o parejas |
-| **Entrega** | Repositorio GitHub |
-
----
-
 ## 🎯 Objetivos de Aprendizaje
 
 Al completar esta práctica, el alumno será capaz de:
@@ -75,7 +63,7 @@ Accede a `http://localhost:8000`, regístrate y comprueba que el CRUD de Product
 
 ---
 
-### Tarea 1: CRUD de Categorías (5 puntos)
+### Tarea 1: CRUD de Categorías
 
 Implementa un CRUD completo para **Categorías** de productos, siguiendo la misma arquitectura que el CRUD de Productos existente.
 
@@ -91,7 +79,7 @@ Implementa un CRUD completo para **Categorías** de productos, siguiendo la mism
 | created_at | timestamp | auto |
 | updated_at | timestamp | auto |
 
-#### 1.2 Backend - Checklist
+#### 1.2 Subtareas - Checklist
 
 - [ ] **Migración**: Crear archivo en `database/migrations/`
 - [ ] **Modelo**: Crear `app/Models/Category.php` con `$fillable` y `$casts`
@@ -102,7 +90,7 @@ Implementa un CRUD completo para **Categorías** de productos, siguiendo la mism
   - `destroy()` - Eliminar categoría (redirect)
 - [ ] **Rutas**: Añadir en `routes/web.php` dentro del grupo autenticado
 
-#### 1.3 Frontend - Checklist
+#### 1.3 Subtareas - Checklist
 
 - [ ] **Tipos TypeScript**: Añadir interface `Category` en `resources/js/types/index.d.ts`
 - [ ] **Página**: Crear `resources/js/Pages/Categories/Index.tsx`
@@ -113,7 +101,7 @@ Implementa un CRUD completo para **Categorías** de productos, siguiendo la mism
 
 ---
 
-### Tarea 2: Relación Producto-Categoría (3 puntos)
+### Tarea 2: Relación Producto-Categoría. Tarea de investigación.
 
 Implementa una relación **Many-to-One** (muchos productos pertenecen a una categoría).
 
@@ -143,7 +131,7 @@ Implementa una relación **Many-to-One** (muchos productos pertenecen a una cate
   'categories' => Category::where('active', true)->get(),
   ```
 
-#### 2.2 Frontend - Checklist
+#### 2.2 Subtareas - Checklist
 
 - [ ] **Tipos TypeScript**: Actualizar interface `Product` para incluir `category_id` y `category`
 - [ ] **Formulario Producto**: Añadir selector de categoría en `ProductModal.tsx`
@@ -151,44 +139,45 @@ Implementa una relación **Many-to-One** (muchos productos pertenecen a una cate
 
 ---
 
-### Tarea 3: Documentación y Entrega (2 puntos)
+### Tarea 3: Documentación y Entrega
 
-#### 3.1 Control de Versiones
-- [ ] Commits frecuentes y descriptivos (mínimo 5 commits)
-- [ ] Usar formato: `feat:`, `fix:`, `docs:`
-- [ ] No subir archivos innecesarios (.env, node_modules, vendor)
+#### 3.1 README.md
+Actualiza el archivo `README.md` del proyecto con:
+- [ ] **Instalación**: Instrucciones claras para clonar y configurar el proyecto
+- [ ] **Uso**: Cómo ejecutar la aplicación y acceder a las funcionalidades
+- [ ] **Características**: Listado de funcionalidades implementadas (CRUD Categorías, relación con Productos)
+- [ ] **Capturas de pantalla**: Imágenes del CRUD de categorías funcionando
 
-#### 3.2 README.md
-Actualiza el README con:
-- [ ] Tu nombre y fecha
-- [ ] Descripción de las funcionalidades añadidas
-- [ ] Capturas de pantalla del CRUD de categorías
+> 💡 **Nota sobre IA**: Podéis utilizar herramientas de IA para generar la documentación técnica, pero **debéis hacerla vuestra**. Revisad, adaptad y personalizad el contenido para que refleje vuestro trabajo real.
 
-#### 3.3 Entrega
-- [ ] Subir código a tu fork en GitHub
-- [ ] Enviar URL del repositorio
+#### 3.2 Resumen Reflexivo
+Crea un archivo `docs/REFLEXION.md` con un resumen de **máximo 1 página** que incluya:
+- [ ] **Proceso de desarrollo**: ¿Cómo abordaste las tareas? ¿Qué pasos seguiste?
+- [ ] **Dificultades encontradas**: ¿Qué problemas surgieron y cómo los resolviste?
+- [ ] **Aprendizajes**: ¿Qué has aprendido con esta práctica?
+- [ ] **Opinión personal**: ¿Qué te ha parecido trabajar con este stack tecnológico?
+
+> ⚠️ **Importante**: Este resumen debe estar **escrito con tus propias palabras**. No se recomienda el uso de IA para esta parte. Se valorará la autenticidad y la reflexión personal.
+
+#### 3.3 Vídeo Demostrativo (Obligatorio)
+Graba un vídeo de **3-5 minutos** mostrando:
+- [ ] **CRUD de Categorías**: Crear, listar, editar y eliminar una categoría
+- [ ] **Relación Producto-Categoría**: Asignar categoría a un producto y mostrarla en la tabla
+- [ ] **Explicación breve**: Comenta brevemente el código mientras demuestras las funcionalidades
+
+**Requisitos del vídeo:**
+- Duración: 3-5 minutos
+- Debe mostrarse la aplicación funcionando en el navegador
+- Audio claro explicando lo que se muestra
+- Subir a YouTube (oculto o público) o similar y añadir enlace en el README
+
+> 🎥 **Sin vídeo = práctica no evaluable**. El vídeo es obligatorio para la evaluación de la práctica.
 
 ---
 
-## 📊 Criterios de Evaluación
+## 📅 Fecha de entrega
 
-Ver [RUBRICA_EVALUACION.md](./RUBRICA_EVALUACION.md) para el desglose completo.
-
-| Tarea | Puntos |
-|-------|--------|
-| Tarea 1: CRUD de Categorías | 5 |
-| Tarea 2: Relación Producto-Categoría | 3 |
-| Tarea 3: Documentación y Entrega | 2 |
-| **Total** | **10** |
-
----
-
-## 📅 Fechas
-
-| Hito | Fecha |
-|------|-------|
-| Publicación del enunciado | [FECHA] |
-| Entrega Final | [FECHA + 1 semana] |
+- 16 de enero del 2026 a las 23:59 h.
 
 ---
 
@@ -210,28 +199,3 @@ Estudia el CRUD de Productos existente:
 - `resources/js/Pages/Products/Index.tsx`
 - `resources/js/Components/Products/ProductTable.tsx`
 - `resources/js/Components/Products/ProductModal.tsx`
-
----
-
-## ❓ Preguntas Frecuentes
-
-### ¿Puedo cambiar el diseño visual?
-Sí, pero mantén Tailwind CSS como framework de estilos.
-
-### ¿Qué hago si encuentro un bug en el código base?
-Documéntalo y corrígelo. ¡Puntos extra si lo reportas!
-
-### ¿Puedo trabajar en pareja?
-Sí, pero ambos deben poder explicar todo el código.
-
----
-
-## 📞 Contacto
-
-- **Profesor**: [Nombre del profesor]
-- **Email**: [email@centro.edu]
-- **Tutorías**: [Horario y lugar]
-
----
-
-*Última actualización: Diciembre 2024*

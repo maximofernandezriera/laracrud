@@ -158,31 +158,34 @@
 
 ## Tarea 3: Documentación y Entrega (2 puntos)
 
-### 3.1 Control de Versiones (1 punto)
+### 3.1 README.md (0.5 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| **Excelente** | 1.0 | +7 commits descriptivos, formato `feat:`, `fix:`, `docs:`, historial limpio. |
-| **Bien** | 0.75 | 5-7 commits, mensajes claros. |
-| **Suficiente** | 0.5 | 3-5 commits, mensajes básicos. |
-| **Insuficiente** | 0-0.25 | <3 commits o mensajes tipo "update", "asdf". |
+| **Excelente** | 0.5 | README completo: instalación, uso, características, capturas de pantalla. Contenido personalizado. |
+| **Bien** | 0.4 | README con la mayoría de secciones, falta algún detalle. |
+| **Suficiente** | 0.25 | README básico con instalación y uso. |
+| **Insuficiente** | 0 | README sin modificar o copiado sin adaptar. |
 
-### 3.2 README y Documentación (0.75 puntos)
-
-| Nivel | Puntos | Descripción |
-|-------|--------|-------------|
-| **Excelente** | 0.75 | README actualizado con nombre, descripción de funcionalidades, capturas de pantalla. |
-| **Bien** | 0.5 | README con descripción, faltan capturas. |
-| **Suficiente** | 0.35 | README básico solo con nombre. |
-| **Insuficiente** | 0-0.2 | README sin modificar. |
-
-### 3.3 Entrega (0.25 puntos)
+### 3.2 Resumen Reflexivo (0.75 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| **Excelente** | 0.25 | Repositorio accesible, .gitignore correcto, entrega puntual. |
-| **Suficiente** | 0.15 | Repositorio accesible con pequeños problemas. |
-| **Insuficiente** | 0 | Repositorio inaccesible o entrega tardía >2 días. |
+| **Excelente** | 0.75 | Archivo `docs/REFLEXION.md` de máx. 1 página. Incluye proceso, dificultades, aprendizajes y opinión personal. Escrito con palabras propias, auténtico y reflexivo. |
+| **Bien** | 0.5 | Resumen completo pero poco profundo o algo genérico. |
+| **Suficiente** | 0.35 | Resumen muy breve o faltan secciones importantes. |
+| **Insuficiente** | 0 | Ausente o claramente generado por IA sin personalizar. |
+
+### 3.3 Vídeo Demostrativo (0.75 puntos) ⚠️ OBLIGATORIO
+
+| Nivel | Puntos | Descripción |
+|-------|--------|-------------|
+| **Excelente** | 0.75 | Vídeo de 3-5 min mostrando CRUD categorías, relación con productos, explicación del código. Audio claro. |
+| **Bien** | 0.5 | Vídeo completo pero sin explicación verbal o muy breve. |
+| **Suficiente** | 0.35 | Vídeo incompleto, falta demostrar alguna funcionalidad. |
+| **No presentado** | **-10** | **Sin vídeo = práctica no evaluable.** |
+
+> ⚠️ **IMPORTANTE**: La entrega del vídeo es **obligatoria**. Sin vídeo, la práctica no será evaluada y se calificará con 0.
 
 ---
 
@@ -230,10 +233,11 @@ Antes de entregar, verifica:
 - [ ] Selector de categoría en formulario de producto
 - [ ] Categoría visible en tabla de productos
 
-### Tarea 3: Entrega
-- [ ] Mínimo 5 commits
-- [ ] README actualizado con mi nombre
-- [ ] Capturas de pantalla incluidas
+### Tarea 3: Documentación y Entrega
+- [ ] README.md con instalación, uso, características y capturas
+- [ ] Archivo `docs/REFLEXION.md` con resumen reflexivo personal
+- [ ] Vídeo de 3-5 min subido a YouTube (o similar)
+- [ ] Enlace del vídeo incluido en README
 - [ ] Repositorio público y accesible
 
 ---
@@ -264,10 +268,12 @@ Antes de entregar, verifica:
 | - Selector | | 0.5 | |
 | - Tabla | | 0.5 | |
 | **T3: Documentación** | | 2.0 | |
-| - Commits | | 1.0 | |
-| - README | | 0.75 | |
-| - Entrega | | 0.25 | |
+| - README.md | | 0.5 | |
+| - Resumen Reflexivo | | 0.75 | |
+| - Vídeo Demostrativo | | 0.75 | |
 | **TOTAL** | | **10** | |
+| | | | |
+| **¿Vídeo entregado?** | ☐ Sí / ☐ No | | Sin vídeo = 0 |
 
 ---
 
